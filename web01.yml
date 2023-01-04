@@ -1,0 +1,19 @@
+version: "3.7"
+  2
+  3 services:
+  4   web01:
+  5     image: httpd
+  6     volumes:
+  7       - /compose/web01/Site-completo:/usr/local/apache2/htdocs/
+  8     networks:
+  9       - vpc-web01
+ 10     ports:
+ 11         - "8080:80"
+ 12
+ 13 networks:
+ 14   vpc-web01:
+ 15     driver: bridge
+ 16
+ 17 # Arquivo do site baixado do git
+ 18 # https://github.com/pedrogedo/Site-completo.git
+~                                                      
